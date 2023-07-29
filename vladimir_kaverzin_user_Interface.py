@@ -20,7 +20,7 @@ def create_object():
 
     if object_sphere:
         object_name = object_name + "_Sphere"
-        object = cmds.polySphere(n = object_name)[0]
+        object = cmds.polySphere(n=object_name)[0]
 
     elif object_cube:
         object_name = object_name + "_Cube"
@@ -28,10 +28,10 @@ def create_object():
 
     else:
         object_name = object_name + "_Cone"
-        object = cmds.polyCone(n = object_name)[0]
+        object = cmds.polyCone(n=object_name)[0]
 
     if option_group:
-        cmds.group(n = object_name + "_group", em = True)
+        cmds.group(n=object_name + "_group", em=True)
         cmds.parent(object, group)
 
     if option_move:
@@ -45,17 +45,17 @@ def create_object():
         cmds.editDisplayLayerMembers(display_layer, object_name)
 
 def main():
-    if cmds.window("MyWindow", exists = True):
+    if cmds.window("MyWindow", exists=True):
         cmds.deleteUI("MyWindow")
 
-    if cmds.windowPref("MyWindow", exists = True):
-        cmds.windowPref("MyWindow", remove = True)
+    if cmds.windowPref("MyWindow", exists=True):
+        cmds.windowPref("MyWindow", remove=True)
 
-    cmds.window("MyWindow", title = "Object Generator", width = 250, tlb = True)
+    cmds.window("MyWindow", title="Object Generator", width=250, tlb=True)
 
     main_Layout = cmds.columnLayout(adjustableColumn=1, columnAttach=('both', 5), rowSpacing=10)
 
-    text_field = cmds.textField("myWindow_textField", placeholderText = "Object Name", parent = main_Layout, backgroundColor=(0.5, 0.5, 0.7))
+    text_field = cmds.textField("myWindow_textField", placeholderText="Object Name", parent=main_Layout, backgroundColor=(0.5, 0.5, 0.48))
 
     #object_layout = cmds.rowLayout(numberOfColumns = 3, parent = main_Layout, columnWidth3=[82, 82, 82], columnAttach3=["both", "both", "both"], columnAlign=[1, "center"])
     object_layout = cmds.formLayout(numberOfDivisions=100)
