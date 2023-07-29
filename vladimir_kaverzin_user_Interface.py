@@ -91,9 +91,6 @@ def main():
     cmds.formLayout(button_layout, e=1, attachPosition = [(create_button, 'right', 0, 49)])
     cmds.formLayout(button_layout, e=1, attachPosition = [(cancel_button, 'left', 0, 51)])
 
-
-
-
     cmds.showWindow("MyWindow")
 
 main()
