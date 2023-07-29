@@ -24,11 +24,11 @@ def create_object():
 
     elif object_cube:
         object_name = object_name + "_Cube"
-        object = cmds.polySphere(n=object_name)[0]
+        object = cmds.polyCube(n=object_name)[0]
 
     else:
         object_name = object_name + "_Cone"
-        object = cmds.polySphere(n = object_name)[0]
+        object = cmds.polyCone(n = object_name)[0]
 
     if option_group:
         cmds.group(n = object_name + "_group", em = True)
